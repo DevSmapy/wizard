@@ -5,6 +5,7 @@ from data_processor import (
     summarize_release,
     fetch_multiple_pages_kmdb,
     extract_movie_details,
+    generate_html,
 )
 
 
@@ -39,7 +40,22 @@ def main_kmdb():
 
     data = fetch_multiple_pages_kmdb(api_url, params=params)
     movie_details = extract_movie_details(data)
+    index_body, mcards = generate_html("templates/", movie_details)
 
+    with open("Aug3rd.html", "w") as output_file:
+        output_file.write(
+            """
+            <div style="max-width: 600px; margin: auto; padding: 10px; font-family: 'Nunito', sans-serif;">
+<div style="text-align: center; margin-bottom: 20px;">
+<p style="font-size: 24px; font-weight: bold; color: #333;" data-ke-size="size16">주간 개봉 영화</p>
+</div>
+<div style="margin-bottom: 20px; border: 2px solid #ccc; border-radius: 10px; padding: 15px; background-color: #f9f9f9;">
+<p style="font-size: 18px; font-weight: bold; color: #007bff;" data-ke-size="size16">목차</p>
+            """
+        )
+        output_file.write(index_body)
+        output_file.write("</div>")
+        output_file.write(mcards)
 
 if __name__ == "__main__":
     main_kmdb()
