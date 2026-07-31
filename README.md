@@ -24,7 +24,7 @@ To get started with WIZARD, follow these steps:
    cd wizard
    ```
 3. **Install Dependencies Using uv**:
-   Ensure you have [uv](https://docs.astral.sh/uv/) installed. Then install the project's dependencies:
+   Requires Python 3.11 or newer. Ensure you have [uv](https://docs.astral.sh/uv/) installed, then install the project's dependencies:
    ```bash
    uv sync
    ```
