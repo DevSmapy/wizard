@@ -1,0 +1,13 @@
+{
+  "api_url": "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp",
+  "params": {
+    "collection": "kmdb_new2",
+    "ServiceKey": "YOUR_KMDB_API_KEY",
+    "detail": "Y",
+    "listCount": 10,
+    "startCount": 0,
+    "releaseDts": "20240101",
+    "releaseDte": "20240107"
+  },
+  "output_path": "output/weekly_report.html"
+}

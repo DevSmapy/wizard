@@ -1,4 +1,6 @@
 .cursor/
 .venv/
 __pycache__/
+config.json
+output/
 dist/

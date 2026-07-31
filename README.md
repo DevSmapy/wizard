@@ -1,34 +1,31 @@
 # WIZARD
 
-Welcome to **WIZARD**!
+**WIZARD** (Weekly Insights on Zealous Art and Release Details) generates a weekly Korean movie release report as Tistory-ready HTML from the KMDB API.
 
-**WIZARD** (Weekly Insights on Zealous Art and Release Details) is a tool designed to automate the summarization of weekly movie releases. This program helps you stay updated with the latest films hitting the theaters each week, providing a comprehensive overview in an easy-to-digest format.
+## What it does
 
-## Features
+1. Fetch release data from KMDB
+2. Extract title, date, genre, directors, cast, plot, and poster
+3. Render a table of contents + movie cards into one HTML file for manual paste into Tistory
 
-- **Weekly Updates**: Get the latest movie release information on a weekly basis.
-- **Comprehensive Summaries**: Detailed summaries and key information about each film.
-- **User-Friendly Interface**: Designed for ease of use, making movie tracking effortless.
-- **Customizable**: Adapt the tool to fit your specific needs and preferences.
+## Setup
 
-## Installation
-
-To get started with WIZARD, follow these steps:
-
-1. **Clone the Repository**:
+1. Clone and enter the repo:
    ```bash
    git clone https://github.com/DevSmapy/wizard.git
-   ```
-2. **Navigate to the Project Directory**:
-   ```bash
    cd wizard
    ```
-3. **Install Dependencies Using uv**:
-   Requires Python 3.11 or newer. Ensure you have [uv](https://docs.astral.sh/uv/) installed, then install the project's dependencies:
+2. Install dependencies with [uv](https://docs.astral.sh/uv/) (requires Python 3.11 or newer):
    ```bash
    uv sync
    ```
-4. **Run the Program**:
+3. Copy the example config and fill in your KMDB key and release date range:
+   ```bash
+   cp config.example.json config.json
+   ```
+4. Run:
    ```bash
    uv run python main.py
    ```
+
+Output path comes from `config.json` (`output_path`). Keep `config.json` local — it is gitignored.
