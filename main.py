@@ -1,10 +1,14 @@
 import json
+from pathlib import Path
 
 from data_processor import (
     extract_movie_details,
     fetch_multiple_pages_kmdb,
     generate_html,
 )
+
+ROOT = Path(__file__).resolve().parent
+TEMPLATES_DIR = ROOT / "templates"
 
 
 def main() -> None:
@@ -13,7 +17,7 @@ def main() -> None:
 
     data = fetch_multiple_pages_kmdb(config["api_url"], params=config["params"])
     movie_details = extract_movie_details(data)
-    html = generate_html("templates/", movie_details)
+    html = generate_html(f"{TEMPLATES_DIR}/", movie_details)
 
     output_path = config["output_path"]
     with open(output_path, "w", encoding="utf-8") as output_file:

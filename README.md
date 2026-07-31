@@ -15,7 +15,7 @@
    git clone https://github.com/DevSmapy/wizard.git
    cd wizard
    ```
-2. Install dependencies with [uv](https://docs.astral.sh/uv/):
+2. Install dependencies with [uv](https://docs.astral.sh/uv/) (requires Python 3.11 or newer):
    ```bash
    uv sync
    ```
